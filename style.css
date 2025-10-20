@@ -321,3 +321,35 @@ body{
   text-shadow: 0 0 12px var(--neon-pink), 0 0 24px rgba(255,51,196,0.25);
   transform: translateY(-3px);
 }
+
+/* Glow khusus untuk Trainer Prompt Writer */
+.skills-list li.trainer-glow {
+  color: var(--neon-pink);
+  font-weight: 700;
+  text-shadow:
+    0 0 6px var(--neon-pink),
+    0 0 12px var(--neon-pink),
+    0 0 24px rgba(255,51,196,0.6);
+  animation: trainerPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes trainerPulse {
+  0% {
+    text-shadow:
+      0 0 6px var(--neon-pink),
+      0 0 12px var(--neon-pink),
+      0 0 24px rgba(255,51,196,0.6);
+  }
+  50% {
+    text-shadow:
+      0 0 8px var(--neon-cyan),
+      0 0 16px var(--neon-cyan),
+      0 0 32px rgba(0,255,255,0.6);
+  }
+  100% {
+    text-shadow:
+      0 0 10px var(--neon-purple),
+      0 0 20px var(--neon-purple),
+      0 0 36px rgba(164,77,255,0.6);
+  }
+}
