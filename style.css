@@ -1,355 +1,261 @@
-:root{
-  --bg1:#03030a;
-  --bg2:#060c1a;
-  --neon-cyan:#00ffff;
-  --neon-pink:#ff33cc;
-  --neon-green:#00ff88;
-  --neon-purple:#a44dff;
-  --text:#e6eef6;
-  --muted:#9aa3b2;
-  --radius:14px;
-  font-family:"Inter",system-ui;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  min-height:100vh;
-  color:var(--text);
-  background:radial-gradient(ellipse at 20% 20%,rgba(0,255,255,0.05),transparent 70%),
-             radial-gradient(ellipse at 80% 80%,rgba(255,0,255,0.05),transparent 70%),
-             linear-gradient(135deg,var(--bg1),var(--bg2));
-  background-size:200% 200%;
-  animation:moveBG 20s ease infinite;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  padding:40px;
-}
-@keyframes moveBG{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-.container{width:100%;max-width:980px;}
-.header{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
-.brand{font-family:"Orbitron",sans-serif;font-weight:700;font-size:22px;}
-.logo-box{
-  background:linear-gradient(135deg,var(--neon-pink),var(--neon-cyan));
-  padding:6px 12px;border-radius:8px;color:#000;box-shadow:0 0 20px rgba(0,255,255,.3);
-}
-.subtitle{font-size:13px;color:var(--muted);}
-.hero{
-  text-align:center;
-  padding:50px 20px;
-  background:rgba(255,255,255,0.02);
-  border-radius:var(--radius);
-  box-shadow:0 0 20px rgba(0,255,255,0.08);
-  margin-bottom:24px;
-}
-.opening{
-  font-family:"Orbitron",sans-serif;
-  font-size:64px;
-  letter-spacing:6px;
-  color:var(--neon-cyan);
-  text-shadow:0 0 20px var(--neon-cyan);
-  min-height:80px;
-  white-space:nowrap;
-}
-.cursor{
-  display:inline-block;
-  width:6px;
-  height:1em;
-  background:var(--neon-cyan);
-  margin-left:4px;
-  animation:blink 0.9s steps(1) infinite;
-}
-@keyframes blink{50%{opacity:0}}
-.hero-desc{color:var(--muted);margin:16px 0;}
-.cta{
-  display:inline-block;
-  padding:10px 16px;
-  border-radius:10px;
-  border:1px solid var(--neon-cyan);
-  color:var(--neon-cyan);
-  text-decoration:none;
-  font-weight:600;
-  box-shadow:0 0 12px rgba(0,255,255,0.2);
-  transition:all .3s;
-}
-.cta:hover{
-  background:var(--neon-cyan);
-  color:#01010a;
-  box-shadow:0 0 30px var(--neon-cyan);
-}
-.card{
-  background:rgba(255,255,255,0.02);
-  border:1px solid rgba(255,255,255,0.05);
-  padding:20px;
-  border-radius:var(--radius);
-  margin-bottom:18px;
-  box-shadow:0 0 25px rgba(255,255,255,0.04);
-}
-.skills-list{
-  display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;list-style:none;
-}
-.skills-list li{
-  padding:8px 12px;border-radius:8px;
-  background:linear-gradient(90deg,rgba(0,255,255,0.07),rgba(255,51,204,0.07));
-  border:1px solid rgba(255,255,255,0.1);
-  font-weight:600;
-  text-shadow:0 0 6px rgba(0,255,255,0.3);
-}
-.timeline{padding-left:20px;margin-top:10px;}
-.footer{text-align:center;margin-top:20px;color:var(--muted);font-size:13px;}
-@media(max-width:600px){
-  .opening{font-size:42px}
-  body{padding:20px}
-}
-/* === Animasi neon glow untuk semua section === */
-.card {
-  position: relative;
-  overflow: hidden;
-  animation: fadeUp 1.2s ease forwards;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+:root {
+  --bg1: #03030a;
+  --bg2: #060c1a;
+  --neon-cyan: #00ffff;
+  --neon-pink: #ff33cc;
+  --neon-green: #00ff88;
+  --neon-purple: #a44dff;
+  --text: #e6eef6;
+  --muted: #9aa3b2;
+  --radius: 14px;
+  font-family: "Inter", system-ui;
 }
 
-/* efek glow terus-menerus */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
-  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink), var(--neon-green), var(--neon-purple));
-  background-size: 300% 300%;
-  opacity: 0.25;
-  filter: blur(12px);
-  z-index: -1;
-  animation: glowShift 6s linear infinite;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* animasi muncul dari bawah */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+body {
+  min-height: 100vh;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
 }
 
-/* warna neon berputar lembut */
-@keyframes glowShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.container {
+  width: 100%;
+  max-width: 980px;
 }
 
-/* saat hover: glow lebih kuat dan naik sedikit */
-.card:hover {
-  box-shadow: 0 0 25px rgba(0,255,255,0.25), 0 0 40px rgba(255,51,204,0.15);
-  transform: translateY(-4px);
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
-/* judul tiap card juga punya efek neon */
-.card h3 {
+.brand {
   font-family: "Orbitron", sans-serif;
-  color: var(--neon-cyan);
-  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
-  animation: textGlow 2s ease-in-out infinite alternate;
-}
-
-/* teks di dalam card glowing lembut */
-.card p, .card li, .card ol {
-  color: #dfe9f6;
-  text-shadow: 0 0 6px rgba(0,255,255,0.3);
-}
-
-/* animasi glow teks */
-@keyframes textGlow {
-  from { text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan); }
-  to { text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink); }
-}
-/* === Neon animasi untuk teks di dalam card === */
-.card p, 
-.card li, 
-.card ol li, 
-.card b, 
-.card span {
-  position: relative;
-  color: var(--neon-cyan);
-  text-shadow:
-    0 0 4px var(--neon-cyan),
-    0 0 8px var(--neon-cyan),
-    0 0 16px rgba(0,255,255,0.5);
-  animation: textColorCycle 6s ease-in-out infinite alternate;
-  transition: color 0.3s ease;
-}
-
-/* efek animasi warna berganti-ganti */
-@keyframes textColorCycle {
-  0% {
-    color: var(--neon-cyan);
-    text-shadow:
-      0 0 6px var(--neon-cyan),
-      0 0 10px var(--neon-cyan),
-      0 0 20px var(--neon-cyan);
-  }
-  25% {
-    color: var(--neon-pink);
-    text-shadow:
-      0 0 6px var(--neon-pink),
-      0 0 10px var(--neon-pink),
-      0 0 20px var(--neon-pink);
-  }
-  50% {
-    color: var(--neon-purple);
-    text-shadow:
-      0 0 6px var(--neon-purple),
-      0 0 10px var(--neon-purple),
-      0 0 20px var(--neon-purple);
-  }
-  75% {
-    color: var(--neon-green);
-    text-shadow:
-      0 0 6px var(--neon-green),
-      0 0 10px var(--neon-green),
-      0 0 20px var(--neon-green);
-  }
-  100% {
-    color: var(--neon-cyan);
-    text-shadow:
-      0 0 6px var(--neon-cyan),
-      0 0 10px var(--neon-cyan),
-      0 0 20px var(--neon-cyan);
-  }
-}
-
-/* biar teks <b> makin nyala */
-.card b {
   font-weight: 700;
-  filter: brightness(1.3);
+  font-size: 22px;
 }
 
-/* saat hover di atas card, teks makin terang */
-.card:hover p, 
-.card:hover li, 
-.card:hover b {
-  filter: brightness(1.6);
-  transition: all 0.4s ease;
+.logo-box {
+  background: linear-gradient(135deg, var(--neon-pink), var(--neon-cyan));
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
-.skills-list li {
+.subtitle {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* === HERO SECTION === */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.08);
+  margin-bottom: 24px;
+}
+
+.opening {
+  font-family: "Orbitron", sans-serif;
+  font-size: 64px;
+  letter-spacing: 6px;
   color: var(--neon-cyan);
-  text-shadow: 0 0 6px var(--neon-cyan);
-  animation: textColorCycle 6s ease-in-out infinite alternate;
-  transition: transform .3s, text-shadow .3s;
+  text-shadow: 0 0 20px var(--neon-cyan);
+  min-height: 80px;
+  white-space: nowrap;
 }
 
-.skills-list li:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+.cursor {
+  display: inline-block;
+  width: 6px;
+  height: 1em;
+  background: var(--neon-cyan);
+  margin-left: 4px;
+  animation: blink 0.9s steps(1) infinite;
 }
 
-/* === NEON ANIMASI UNTUK TEKS HERO === */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 .hero-desc {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.5px;
   color: var(--neon-cyan);
-  text-shadow:
-    0 0 6px var(--neon-cyan),
-    0 0 14px var(--neon-cyan),
-    0 0 24px rgba(0,255,255,0.6);
-  animation: heroGlow 6s linear infinite;
-  transition: color 0.5s ease;
+  text-shadow: 0 0 10px var(--neon-cyan);
+  transition: color 0.3s ease;
 }
 
-/* efek warna neon berputar halus */
-@keyframes heroGlow {
+.cta {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+.cta:hover {
+  background: var(--neon-cyan);
+  color: #01010a;
+  box-shadow: 0 0 30px var(--neon-cyan);
+}
+
+/* === CARD SECTION === */
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 20px;
+  border-radius: var(--radius);
+  margin-bottom: 18px;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Judul card */
+.card h3 {
+  font-family: "Orbitron", sans-serif;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* === Neon Text Animation (ringan) === */
+@keyframes softNeonShift {
   0% {
     color: var(--neon-cyan);
-    text-shadow:
-      0 0 6px var(--neon-cyan),
-      0 0 14px var(--neon-cyan),
-      0 0 30px rgba(0,255,255,0.6);
+    text-shadow: 0 0 10px var(--neon-cyan);
   }
-  25% {
+  33% {
     color: var(--neon-pink);
-    text-shadow:
-      0 0 8px var(--neon-pink),
-      0 0 20px var(--neon-pink),
-      0 0 34px rgba(255,51,196,0.6);
+    text-shadow: 0 0 10px var(--neon-pink);
   }
-  50% {
-    color: var(--neon-purple);
-    text-shadow:
-      0 0 8px var(--neon-purple),
-      0 0 20px var(--neon-purple),
-      0 0 34px rgba(164,77,255,0.6);
-  }
-  75% {
+  66% {
     color: var(--neon-green);
-    text-shadow:
-      0 0 8px var(--neon-green),
-      0 0 20px var(--neon-green),
-      0 0 34px rgba(0,255,122,0.6);
+    text-shadow: 0 0 10px var(--neon-green);
   }
   100% {
-    color: var(--neon-cyan);
-    text-shadow:
-      0 0 6px var(--neon-cyan),
-      0 0 14px var(--neon-cyan),
-      0 0 30px rgba(0,255,255,0.6);
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
   }
 }
 
-/* emoji ✨ juga ikut nyala */
-.hero-desc b, .hero-desc i, .hero-desc span, .hero-desc em {
-  color: inherit;
-  text-shadow: inherit;
+/* Terapkan ke teks */
+.card p, 
+.card li, 
+.card ol li, 
+.card b, 
+.skills-list li {
+  animation: softNeonShift 6s ease-in-out infinite alternate;
+  transition: color 0.3s ease;
+  font-weight: 500;
 }
 
-/* Neon style untuk link di timeline */
+/* === SKILLS SECTION === */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  list-style: none;
+}
+
+.skills-list li {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
+}
+
+.skills-list li:hover {
+  transform: scale(1.05);
+}
+
+/* TIMELINE */
+.timeline {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
 .timeline a {
   color: var(--neon-cyan);
   text-decoration: underline;
   text-underline-offset: 4px;
-  text-shadow: 0 0 8px var(--neon-cyan), 0 0 16px rgba(0,255,255,0.25);
-  transition: color .25s ease, text-shadow .25s ease, transform .18s ease;
-  font-weight:600;
+  text-shadow: 0 0 8px var(--neon-cyan);
+  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.18s ease;
+  font-weight: 600;
 }
 
 .timeline a:hover {
   color: var(--neon-pink);
-  text-shadow: 0 0 12px var(--neon-pink), 0 0 24px rgba(255,51,196,0.25);
+  text-shadow: 0 0 12px var(--neon-pink);
   transform: translateY(-3px);
 }
 
-/* Glow khusus untuk Trainer Prompt Writer */
-.skills-list li.trainer-glow {
-  color: var(--neon-pink);
-  font-weight: 700;
-  text-shadow:
-    0 0 6px var(--neon-pink),
-    0 0 12px var(--neon-pink),
-    0 0 24px rgba(255,51,196,0.6);
-  animation: trainerPulse 3s ease-in-out infinite alternate;
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
-@keyframes trainerPulse {
-  0% {
-    text-shadow:
-      0 0 6px var(--neon-pink),
-      0 0 12px var(--neon-pink),
-      0 0 24px rgba(255,51,196,0.6);
+/* PROFIL FOTO */
+.profile-photo {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.profile-photo img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px var(--neon-cyan),
+              0 0 20px var(--neon-pink),
+              0 0 30px var(--neon-purple);
+  border: 2px solid var(--neon-cyan);
+  transition: all 0.4s ease;
+}
+
+.profile-photo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--neon-green),
+              0 0 25px var(--neon-pink),
+              0 0 40px var(--neon-purple);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .opening {
+    font-size: 42px;
   }
-  50% {
-    text-shadow:
-      0 0 8px var(--neon-cyan),
-      0 0 16px var(--neon-cyan),
-      0 0 32px rgba(0,255,255,0.6);
-  }
-  100% {
-    text-shadow:
-      0 0 10px var(--neon-purple),
-      0 0 20px var(--neon-purple),
-      0 0 36px rgba(164,77,255,0.6);
+  body {
+    padding: 20px;
   }
 }
