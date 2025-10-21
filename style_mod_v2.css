@@ -1,0 +1,162 @@
+:root{
+  --bg1:#00060a; --bg2:#001217;
+  --neon-cyan:#00ffff; --neon-pink:#ff33cc; --neon-green:#00ff88; --neon-purple:#a44dff;
+  --text:#cfeff6; --muted:#9aa3b2; --glass: rgba(0,0,0,0.45);
+  font-family: "Inter", system-ui, "Orbitron";
+}
+
+*{box-sizing:border-box}
+
+body.hacker-bg{margin:0;min-height:100vh;background:radial-gradient(ellipse at 20% 10%, rgba(0,255,136,0.02), transparent 10%),linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text)}
+
+/* layout */
+.container{max-width:1100px;margin:24px auto;padding:22px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
+.brand-wrap .brand{font-family:Orbitron, sans-serif;letter-spacing:2px;font-size:20px;color:var(--neon-green);text-shadow:0 0 12px rgba(0,255,136,0.18)}
+.subtitle{font-size:12px;color:var(--muted);margin-top:4px}
+
+/* controls */
+.controls{display:flex;gap:8px;align-items:center}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:var(--neon-green);cursor:pointer;font-weight:700;text-transform:uppercase;font-size:12px}
+.btn-small{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:6px 8px;border-radius:8px;color:var(--muted);cursor:pointer;font-weight:700;font-size:12px}
+
+/* hero */
+.hero{margin:18px 0;padding:18px;background:linear-gradient(180deg, rgba(0,0,0,0.16), rgba(255,255,255,0.02));border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+.profile-and-opening{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center}
+.profile-photo{flex:0 0 200px;text-align:center;z-index:2}
+.profile-photo img{width:150px;height:150px;object-fit:cover;border-radius:50%;border:3px solid rgba(0,255,136,0.9);box-shadow:0 0 20px rgba(0,255,136,0.12);transition:transform .28s ease,box-shadow .28s ease}
+.pf-overlay{margin-top:10px;font-weight:700;display:block;padding:8px 12px;border-radius:8px;background:var(--glass);border:1px solid rgba(0,255,136,0.06);color:var(--neon-green);font-size:13px}
+.opening-wrap{flex:1;min-width:280px;text-align:center}
+.opening{font-family:Orbitron, sans-serif;font-size:56px;line-height:1;color:var(--neon-green);margin:0 0 10px 0;text-shadow:0 0 14px rgba(0,255,136,0.18);letter-spacing:4px;transform-origin:center;animation:pop 1.2s ease}
+@keyframes pop{0%{transform:scale(.86);opacity:0}50%{transform:scale(1.03)}100%{transform:scale(1);opacity:1}}
+.hero-desc{font-size:16px;color:var(--muted)}
+
+/* cards */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));padding:16px;margin-top:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.card h3{margin-top:0;color:var(--neon-green);text-shadow:0 0 8px rgba(0,255,136,0.08)}
+.collapsible .card-header{display:flex;align-items:center;justify-content:space-between}
+.skills-list{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:0}
+.skills-list li{padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
+
+/* footer */
+.footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px;padding-bottom:40px}
+.contact-link{color:var(--neon-green);text-decoration:none}
+
+/* small screens */
+@media (max-width:720px){
+  .profile-and-opening{flex-direction:column-reverse}
+  .opening{font-size:36px}
+  .profile-photo{order:1}
+}
+
+/* hacker mode */
+.hacker-active .opening{color:var(--neon-cyan);text-shadow:0 0 24px rgba(0,255,255,0.14);}
+.hacker-active body{background:linear-gradient(180deg,#001217,#00080a)}
+
+/* drawer mode styles */
+.mode-drawer .collapsible { position: relative; overflow: hidden; max-height: 56px; transition: max-height .36s ease, box-shadow .2s ease; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.02); }
+.mode-drawer .collapsible.expanded { max-height: 900px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+.mode-drawer .collapsible .card-actions .toggle-section { color: var(--neon-green); border-color: rgba(0,255,136,0.08); }
+.mode-default .collapsible { max-height: none; overflow: visible; }
+
+/* hidden utility */
+.hidden{display:none !important}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 20px;
+  position: relative;
+  border-left: 2px solid rgba(0,255,136,0.3);
+}
+.timeline li {
+  position: relative;
+  padding: 10px 0 10px 20px;
+  color: var(--text);
+}
+.timeline li::before {
+  content: "◆";
+  position: absolute;
+  left: -12px;
+  top: 12px;
+  color: var(--neon-green);
+  text-shadow: 0 0 8px var(--neon-green);
+  animation: blink-node 3s infinite;
+}
+@keyframes blink-node {
+  0%,100% {opacity:1;}
+  50% {opacity:0.5;}
+}
+.timeline a {
+  color: var(--neon-green);
+  text-decoration: none;
+  transition: color .3s;
+}
+.timeline a:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 6px var(--neon-cyan);
+}
+
+/* === UNIVERSAL RGB GLOW KEYFRAME === */
+@keyframes rgb-cycle {
+  0%   { filter: drop-shadow(0 0 6px #00ffff); }
+  25%  { filter: drop-shadow(0 0 6px #00ff88); }
+  50%  { filter: drop-shadow(0 0 6px #ff33cc); }
+  75%  { filter: drop-shadow(0 0 6px #a44dff); }
+  100% { filter: drop-shadow(0 0 6px #00ffff); }
+}
+
+@keyframes rgb-text {
+  0%   { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+  25%  { color: #00ff88; text-shadow: 0 0 10px #00ff88; }
+  50%  { color: #ff33cc; text-shadow: 0 0 10px #ff33cc; }
+  75%  { color: #a44dff; text-shadow: 0 0 10px #a44dff; }
+  100% { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+}
+
+/* === FOTO PROFIL RGB BORDER === */
+.profile-photo img {
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #00ffff, #00ff88, #ff33cc, #a44dff, #00ffff);
+  background-size: 400% 400%;
+  animation: rgb-text 6s linear infinite, rgb-cycle 3s linear infinite;
+}
+
+/* === ABOUT SECTION RGB === */
+#about h3,
+#about p,
+#about b {
+  animation: rgb-text 8s linear infinite;
+}
+
+/* === SKILLS SECTION RGB === */
+#skills h3,
+#skills-list li {
+  animation: rgb-text 8s linear infinite;
+  transition: transform 0.2s ease;
+}
+
+#skills-list li:hover {
+  transform: scale(1.08);
+  text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffff;
+}
+
+/* === TIMELINE RGB === */
+#timeline h3,
+#timeline-list li {
+  animation: rgb-text 8s linear infinite;
+}
+
+#timeline-list li a {
+  animation: rgb-text 6s linear infinite;
+  font-weight: 600;
+}
+
+/* === GLOW TRANSITION WHEN HOVERING === */
+#timeline-list li:hover,
+#about p:hover {
+  transform: scale(1.02);
+  filter: brightness(1.3);
+}
+

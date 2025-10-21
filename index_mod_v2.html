@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rival — Cyber Neon Portfolio v2 ⚡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style_mod_v2.css">
+  <meta name="theme-color" content="#01010a">
+</head>
+<body class="hacker-bg mode-default">
+  <main class="container">
+    <header class="header">
+      <div class="brand-wrap">
+        <h1 class="brand"><span class="logo-box">RVL</span> — Rival</h1>
+        <p class="subtitle">🔐 Cyber Security • Forensic • Full-Stack</p>
+      </div>
+
+      <div class="controls">
+        <button id="switch-mode" class="btn-ghost">Switch to Drawer Mode ⚙️</button>
+        <button id="toggle-profile" class="btn-ghost">Hide Profile 👤</button>
+        <button id="hacker-mode" class="btn-ghost">Activate Hacker Vibe 💻</button>
+        <select id="accent-select" class="accent-select" title="Accent color">
+          <option value="cyan">Cyan</option>
+          <option value="green" selected>Green</option>
+          <option value="pink">Pink</option>
+          <option value="purple">Purple</option>
+        </select>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="profile-and-opening">
+        <div class="profile-photo" id="profile-block">
+          <img id="pf-img" src="My_profile.jpg" alt="Foto Rival" />
+          <div id="pf-overlay" class="pf-overlay">Maulana Rivaldo — Cyber & Forensik</div>
+        </div>
+
+        <div class="opening-wrap">
+          <h2 id="opening" class="opening"></h2>
+          <p id="hero-desc" class="hero-desc">✨ Welcome to my portofolio.</p>
+          <a class="cta" href="#about">🔻 Lihat lebih lanjut</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h3>⚙️ About Me</h3>
+      <p>👨‍💻 <b>Nama:</b> Maulana Rivaldo p. <br>
+         🎓 <b>Jurusan:</b> IT <br>
+         🔐 <b>Fokus:</b> Cyber Security, Digital Forensics.<br>
+         🚀 Goal: jadi praktisi keamanan & penulis kreatif.
+      </p>
+    </section>
+
+    <section id="skills" class="card collapsible">
+      <div class="card-header">
+        <h3>🧠 Skills</h3>
+        <div class="card-actions">
+          <button class="btn-small toggle-section" data-target="#skills-list">Toggle</button>
+        </div>
+      </div>
+      <ul id="skills-list" class="skills-list">
+  <li>🎤 Public Speaking</li>
+  <li>🧩 Influence</li>
+  <li>🕵️‍♂️ Incident Analysis</li>
+  <li>📂 File Analysis</li>
+  <li>💰 Financial Understanding</li>
+  <li>🧠 Psychology Basics</li>
+     <li>💂‍♂️ English (A2)</li>
+  <li>🏯 Japanese (N5)</li>
+  <li>🧙‍♂️ Trainer Prompt Writer</li>
+</ul>
+    </section>
+
+    <section id="timeline" class="card collapsible">
+      <div class="card-header">
+        <h3>📚 Timeline Pendidikan</h3>
+        <div class="card-actions">
+          <button class="btn-small toggle-section" data-target="#timeline-list">Toggle</button>
+        </div>
+      </div>
+      <ol id="timeline-list" class="timeline">
+  <li>🏫 SD: Belajar mengenal dunia, menemukan bahwa rasa ingin tahu itu kekuatan terbesar.
+    <a href="https://share.google/tDLc657vOB3iIlMA7" target="_blank" rel="noopener">🌐 Lihat Sekolah</a>
+  </li>
+  <li>🧮 SMP: Menyadari logika bisa menyelamatkan dari kekacauan. Mulai suka analisis dan teka-teki.
+    <a href="https://share.google/Sp6RC8G8BLJDUXiMW" target="_blank" rel="noopener">🌐 Detail</a>
+  </li>
+  <li>💡 SMA: Pertama kali jatuh cinta pada dunia komputer dan data — tempat di mana hal kecil bisa berarti besar.
+    <a href="https://sman2-lmj.sch.id/" target="_blank" rel="noopener">🌐 Profil Sekolah</a>
+  </li>
+  <li>🎓 Kuliah: Menyatukan semua hal. Coding, forensik, robotik, dan manusia di tengahnya.
+    <a href="https://www.unisayogya.ac.id/" target="_blank" rel="noopener">🌐 Universitas</a>
+  </li>
+</ol>
+
+    </section>
+
+    <footer class="footer">
+      <p>📫 <b>Hubungi Saya:</b></p>
+      <p>
+        ✉️ <a class="contact-link" href="mailto:aldoklozen@gmail.com">aldoklozen@gmail.com</a><br>
+        💬 <a class="contact-link" href="#" target="_blank" rel="noopener">Instagram</a> |
+        💻 <a class="contact-link" href="#" target="_blank" rel="noopener">GitHub</a> |
+        🌐 <a class="contact-link" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+      <div class="copyright">© <span id="year"></span> Rival — My portfolio</div>
+    </footer>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="main_mod_v2.js"></script>
+</body>
+</html>
